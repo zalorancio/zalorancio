@@ -97,8 +97,8 @@ const CONFIG = {
     sobre:      "./img/iconos/sobre.svg",     // botón Contact
 
     // Logos de las formas de pago (página Commissions)
-    paypal:      "./img/iconos/paypal.svg",
-    mercadopago: "./img/iconos/mercadopago.svg",
+    paypal:      "./img/iconos/paypal-logo.jpg",
+    mercadopago: "./img/iconos/Mercadopago.png",
   },
 
 };
