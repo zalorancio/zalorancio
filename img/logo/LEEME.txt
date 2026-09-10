@@ -1,0 +1,11 @@
+Acá van las imágenes del banner de la página principal.
+Guardalas con estos nombres exactos:
+
+  personaje-banner.png       -> la ilustración del personaje (~300 x 330)
+  zalorancio-logo.png        -> el texto grande ZALORANCIO   (~460 x 120)
+  zalorancio-subtitulo.png   -> el texto 2d rough animation  (~300 x 44)
+
+PNG con fondo transparente. También sirve GIF (animado o no)
+guardado con el mismo nombre: personaje-banner.gif, etc.
+Mientras no estén, la página muestra un recuadro punteado con el nombre.
+Este archivo LEEME.txt se puede borrar cuando ya no haga falta.

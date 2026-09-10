@@ -1,0 +1,28 @@
+Acá van las 24 imágenes de ejemplo de la página Commissions, en PNG o GIF.
+Los nombres tienen que ser exactamente estos (minúscula, sin espacios):
+
+  icon-sketch-sinfondo.png        icon-sketch-confondo.png
+  icon-lineart-sinfondo.png       icon-lineart-confondo.png
+  icon-color-sinfondo.png         icon-color-confondo.png
+
+  halfbody-sketch-sinfondo.png    halfbody-sketch-confondo.png
+  halfbody-lineart-sinfondo.png   halfbody-lineart-confondo.png
+  halfbody-color-sinfondo.png     halfbody-color-confondo.png
+
+  fullbody-sketch-sinfondo.png    fullbody-sketch-confondo.png
+  fullbody-lineart-sinfondo.png   fullbody-lineart-confondo.png
+  fullbody-color-sinfondo.png     fullbody-color-confondo.png
+
+  gif-opcion1-sinfondo.png        gif-opcion1-confondo.png
+  gif-opcion2-sinfondo.png        gif-opcion2-confondo.png
+  gif-opcion3-sinfondo.png        gif-opcion3-confondo.png
+
+Si preferís GIF, guardalo con el mismo nombre terminado en .gif
+(ej. icon-sketch-sinfondo.gif). La página lo encuentra sola.
+
+No hace falta subirlas todas juntas: las que falten muestran un recuadro
+punteado con el nombre que les corresponde.
+
+Si en js/comisiones.js le cambiás el "id" a una pestaña o a una opción,
+tenés que renombrar las imágenes para que coincidan.
+Este archivo LEEME.txt se puede borrar cuando ya no haga falta.

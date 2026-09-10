@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="titulo_pagina_commissions">Commissions — ZALORANCIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body data-pagina="commissions">
+
+  <a class="volver" href="./index.html">&#8592; <span data-i18n="volver_inicio">Volver al inicio</span></a>
+
+  <button id="btn-idioma" class="btn-idioma" type="button"
+          data-i18n-tooltip="tooltip_idioma"></button>
+
+  <h1 class="titulo-pagina subrayado" data-i18n="titulo_commissions">Commissions Info</h1>
+
+  <!-- ===================================================================
+       PANEL DE COMISIONES
+       Las pestañas, las sub-opciones y los precios salen de
+       js/comisiones.js. Acá no hay que tocar nada.
+       =================================================================== -->
+  <section class="panel">
+    <div class="panel-marco">
+
+      <!-- Pestañas de arriba: Icon / Half body / Full body / Gif -->
+      <div id="pestanias" class="pestanias" role="tablist"></div>
+
+      <!-- Cuerpo rojo: se "pega" a la pestaña elegida -->
+      <div class="panel-cuerpo">
+
+        <!-- Sub-opciones de la izquierda: Sketch / Lineart / Color -->
+        <div id="opciones" class="opciones"></div>
+
+        <!-- Recuadro gris: imagen de ejemplo + costo, aviso y background -->
+        <div class="panel-contenido">
+
+          <div class="ejemplo">
+            <img id="img-ejemplo" alt="">
+          </div>
+
+          <aside class="lateral">
+
+            <div class="caja caja-costo">
+              <h3 data-i18n="costo_titulo">Costo</h3>
+              <div class="precio-usd">
+                <span id="precio-usd" class="monto"></span>
+                <span class="moneda">usd</span>
+                <img id="logo-paypal" alt="PayPal">
+              </div>
+              <div class="precio-ars">
+                <span class="linea"></span>
+                <span><span id="precio-ars"></span> ARS</span>
+                <span class="linea"></span>
+                <img id="logo-mercadopago" alt="Mercado Pago">
+              </div>
+            </div>
+
+            <div class="caja caja-aviso">
+              <span data-i18n="aviso_estimado"></span>
+              <span class="signo" aria-hidden="true">&#9888;</span>
+            </div>
+
+            <div class="caja caja-fondo">
+              <h3 data-i18n="background_titulo">Background</h3>
+              <div class="opciones-fondo">
+                <label>
+                  <input type="checkbox" id="fondo-no" checked>
+                  <span data-i18n="background_no">No</span>
+                </label>
+                <label>
+                  <input type="checkbox" id="fondo-si">
+                  <span data-i18n="background_si">Sí</span>
+                </label>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CONDICIONES  (el texto se edita en js/textos.js)
+       =================================================================== -->
+  <section class="condiciones">
+    <h2 class="titulo-seccion" style="padding-left:0" data-i18n="condiciones_titulo">Condiciones</h2>
+    <ul>
+      <li data-i18n="condicion_1"></li>
+      <li data-i18n="condicion_2"></li>
+      <li data-i18n="condicion_3"></li>
+      <li data-i18n="condicion_4"></li>
+    </ul>
+  </section>
+
+  <!-- ===================================================================
+       ACLARACIÓN FINAL + BOTÓN DE INSTAGRAM
+       El link del botón se cambia en js/config.js (campo "instagram").
+       =================================================================== -->
+  <section class="aclaracion">
+    <h2 data-i18n="aclaracion_titulo">Antes de pedir una comisión</h2>
+    <ul>
+      <li data-i18n="aclaracion_1"></li>
+      <li data-i18n="aclaracion_2"></li>
+      <li data-i18n="aclaracion_3"></li>
+      <li data-i18n="aclaracion_4"></li>
+    </ul>
+    <a id="btn-instagram" class="btn-instagram" href="#" target="_blank" rel="noopener noreferrer"
+       data-i18n="boton_instagram">Escribime por Instagram</a>
+  </section>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/textos.js"></script>
+  <script src="./js/comisiones.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

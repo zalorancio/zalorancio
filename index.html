@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- El título de la pestaña del navegador se traduce desde js/textos.js -->
+  <title data-i18n="titulo_pagina_main">ZALORANCIO — 2d rough animation</title>
+
+  <!-- ===================================================================
+       TIPOGRAFÍAS (Google Fonts)
+       Para cambiar la fuente manuscrita, cambiá el nombre acá y también
+       en la variable --fuente-titulo de css/estilos.css
+       =================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body data-pagina="main">
+
+  <!-- Botón de idioma ES / EN -->
+  <button id="btn-idioma" class="btn-idioma" type="button"
+          data-i18n-tooltip="tooltip_idioma"></button>
+
+  <!-- ===================================================================
+       BANNER
+       Las imágenes se cargan desde js/config.js (sección "imagenes").
+       Mientras el archivo no exista se ve un recuadro punteado con el
+       nombre que hay que ponerle.
+       =================================================================== -->
+  <header class="banner">
+    <div class="banner-personaje">
+      <!-- img/logo/personaje-banner.png -->
+      <img id="img-personaje" alt="Zalorancio">
+    </div>
+
+    <div class="banner-logo">
+      <!-- img/logo/zalorancio-logo.png  (texto grande ZALORANCIO) -->
+      <img id="img-logo" alt="ZALORANCIO">
+      <!-- img/logo/zalorancio-subtitulo.png  (texto chico 2d rough animation) -->
+      <img id="img-subtitulo" class="img-subtitulo" alt="2d rough animation">
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       CONTACTO  |  BOTONES  |  REDES
+       =================================================================== -->
+  <main class="zona-acciones">
+
+    <!-- Columna izquierda: contacto -->
+    <div class="col-contacto">
+      <button id="btn-contacto" class="btn-contacto" type="button"
+              data-i18n-tooltip="tooltip_contacto">
+        <img id="icono-sobre" alt="">
+        <span data-i18n="boton_contacto">Contact</span>
+      </button>
+      <p id="mail-visible" class="mail-visible"></p>
+    </div>
+
+    <!-- Columna del medio: los dos botones grandes -->
+    <nav class="col-botones">
+      <a class="btn-grande btn-portfolio" href="./portfolio.html"
+         data-i18n-tooltip="tooltip_portfolio">
+        <span data-i18n="boton_portfolio">PORTFOLIO</span>
+        <img id="icono-maletin" alt="">
+      </a>
+
+      <a class="btn-grande btn-commissions" href="./commissions.html"
+         data-i18n-tooltip="tooltip_commissions">
+        <span data-i18n="boton_commissions">COMMISSIONS</span>
+        <img id="icono-lapiz" alt="">
+      </a>
+    </nav>
+
+    <!-- Columna derecha: redes sociales (se arman desde js/config.js) -->
+    <div id="redes" class="col-redes"></div>
+
+  </main>
+
+  <!-- ===================================================================
+       ARCHIVOS DE JAVASCRIPT
+       Los tres primeros son los editables. main.js es la lógica.
+       =================================================================== -->
+  <script src="./js/config.js"></script>
+  <script src="./js/textos.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

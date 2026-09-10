@@ -1,0 +1,119 @@
+/* =========================================================================
+   animaciones.js  —  ARCHIVO EDITABLE
+   La lista de videos de la página Portfolio.
+   ---------------------------------------------------------------------
+   CÓMO SACAR EL ID DE UN VIDEO DE YOUTUBE:
+   Si el link es    https://www.youtube.com/watch?v=dQw4w9WgXcQ
+   el ID es         dQw4w9WgXcQ      (lo que va después de  v= )
+
+   Si el link es    https://youtu.be/dQw4w9WgXcQ
+   el ID es         dQw4w9WgXcQ      (lo que va después de la barra)
+   ========================================================================= */
+
+
+/* =========================================================================
+   1) EL DEMOREEL
+   Es el video grande de arriba de todo en la página Portfolio.
+   Para cambiarlo, pegá otro ID entre las comillas.
+   ---------------------------------------------------------------------
+   PROVISIONAL: es un video de ejemplo, cambialo por tu demoreel.
+   ========================================================================= */
+const DEMOREEL = {
+  youtubeId: "aqz-KE-bpKQ",
+};
+
+
+/* =========================================================================
+   2) TODAS LAS ANIMACIONES  ("All Animations")
+   ---------------------------------------------------------------------
+   Cada bloque { ... } es un video de la grilla.
+
+   PARA AGREGAR UNA ANIMACION NUEVA:
+     copiá un bloque entero (desde  {  hasta  },  incluida la coma)
+     pegalo donde quieras de la lista
+     y cambia título, fecha y youtubeId.
+
+   PARA BORRAR UNA ANIMACION:
+     borra su bloque entero, desde  {  hasta  },
+
+   PARA REORDENAR:
+     mové el bloque de lugar. El orden de esta lista es el orden
+     en que se ven en la página: el primero de arriba aparece primero.
+
+   No hay límite: si pones 40 bloques, se muestran 40.
+   ---------------------------------------------------------------------
+   PROVISIONAL: títulos, fechas e IDs son inventados, sólo para que se
+   vea la grilla llena. Reemplazalos por tus videos reales.
+   ========================================================================= */
+const ANIMACIONES = [
+
+  // ===== AGREGAR NUEVAS ANIMACIONES ACÁ ARRIBA (aparecen primero) =====
+
+  {
+    titulo:    "Animacion1",       // <- título que se muestra, entre comillas
+    fecha:     "Julio 2026",       // <- fecha que se muestra al lado
+    youtubeId: "aqz-KE-bpKQ",      // <- ID del video de YouTube
+    miniatura: "",                 // <- opcional, ver nota al final del archivo
+  },
+  {
+    titulo:    "Animacion2",
+    fecha:     "Junio 2026",
+    youtubeId: "jNQXAC9IVRw",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion3",
+    fecha:     "Mayo 2026",
+    youtubeId: "dQw4w9WgXcQ",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion4",
+    fecha:     "Abril 2026",
+    youtubeId: "9bZkp7q19f0",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion5",
+    fecha:     "Marzo 2026",
+    youtubeId: "kJQP7kiw5Fk",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion6",
+    fecha:     "Febrero 2026",
+    youtubeId: "L_jWHffIx5E",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion7",
+    fecha:     "Enero 2026",
+    youtubeId: "fJ9rUzIMcZQ",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion8",
+    fecha:     "Diciembre 2025",
+    youtubeId: "ZZ5LpwO-An4",
+    miniatura: "",
+  },
+  {
+    titulo:    "Animacion9",
+    fecha:     "Noviembre 2025",
+    youtubeId: "M7lc1UVf-VE",
+    miniatura: "",
+  },
+
+];
+
+
+/* =========================================================================
+   NOTA SOBRE "miniatura"
+   ---------------------------------------------------------------------
+   Si lo dejás vacío  ->  ""            la página usa automáticamente la
+                                        miniatura del video de YouTube.
+   Si querés una imagen tuya (sirve .png, .jpg o .gif animado):
+     1. guardala en la carpeta  img/animaciones/
+     2. escribí la ruta acá, por ejemplo:
+        miniatura: "./img/animaciones/mi-dibujo.jpg",
+   ========================================================================= */

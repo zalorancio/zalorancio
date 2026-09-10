@@ -1,0 +1,9 @@
+Acá van las miniaturas propias de las animaciones, si no querés usar la
+miniatura automática de YouTube.
+
+El nombre lo elegís vos (sirve .png, .jpg o .gif). Después lo escribís en js/animaciones.js, así:
+
+  miniatura: "./img/animaciones/mi-imagen.jpg",
+
+Si dejás miniatura: "" vacío, se usa la de YouTube.
+Este archivo LEEME.txt se puede borrar cuando ya no haga falta.

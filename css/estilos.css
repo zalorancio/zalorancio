@@ -1,0 +1,777 @@
+/* =========================================================================
+   ZALORANCIO — hoja de estilos
+   =========================================================================
+   Si querés cambiar los colores o la tipografía, todo se controla desde el
+   bloque :root de acá abajo. No hace falta tocar nada más.
+   ========================================================================= */
+
+:root {
+
+  /* ---------------------------------------------------------------------
+     PALETA  (cambiá acá los colores de todo el sitio)
+     --------------------------------------------------------------------- */
+  --color-fondo:        #faf6ef;   /* blanco hueso del fondo             */
+  --color-panel:        #f3ece0;   /* hueso un poco más oscuro           */
+  --color-gris:         #3d3d3d;   /* botón PORTFOLIO y paneles          */
+  --color-gris-claro:   #565656;
+  --color-rojo:         #c0392b;   /* COMMISSIONS, Contact y pestañas    */
+  --color-rojo-claro:   #d4503f;
+  --color-rojo-oscuro:  #a53126;   /* pestañas no elegidas             */
+  --color-negro:        #151515;   /* trazos y bordes                    */
+  --color-texto:        #232323;
+  --color-texto-suave:  #7b7267;   /* fechas y aclaraciones              */
+
+  /* ---------------------------------------------------------------------
+     TIPOGRAFÍAS
+     Para probar otra fuente manuscrita: cambiá el nombre de acá abajo Y el
+     link de Google Fonts que está en el <head> de los tres archivos .html
+     Alternativas que quedan bien: 'Caveat', 'Patrick Hand', 'Rock Salt'.
+     --------------------------------------------------------------------- */
+  --fuente-titulo: "Permanent Marker", "Comic Sans MS", cursive;
+  --fuente-texto:  "Nunito", "Segoe UI", system-ui, sans-serif;
+
+  /* ---------------------------------------------------------------------
+     TRAZOS Y SOMBRAS (el "hecho a mano")
+     --------------------------------------------------------------------- */
+  --borde:        3px solid var(--color-negro);
+  --borde-grueso: 4px solid var(--color-negro);
+  --sombra:       5px 6px 0 rgba(21, 21, 21, .20);
+  --sombra-chica: 3px 4px 0 rgba(21, 21, 21, .18);
+  --redondeo:     0;   /* esquinas rectas, como en los bocetos */
+}
+
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+
+* { box-sizing: border-box; }
+
+html, body { max-width: 100%; overflow-x: hidden; }
+
+body {
+  margin: 0;
+  padding: 0 0 60px;
+  background-color: var(--color-fondo);
+  background-image:
+    radial-gradient(rgba(21, 21, 21, .035) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+body.sin-scroll { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+button { font-family: inherit; }
+
+
+/* =========================================================================
+   BOTÓN DE IDIOMA  (arriba a la derecha, en las tres páginas)
+   ========================================================================= */
+
+.btn-idioma {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 60;
+  padding: 8px 16px;
+  background: var(--color-fondo);
+  color: var(--color-negro);
+  border: var(--borde);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra-chica);
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transform: rotate(-1.2deg);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-idioma:hover { transform: rotate(-1.2deg) translate(-2px, -2px); box-shadow: 6px 8px 0 rgba(21, 21, 21, .22); }
+.btn-idioma b { color: var(--color-rojo); }
+
+
+/* =========================================================================
+   VOLVER AL INICIO  (portfolio y commissions)
+   ========================================================================= */
+
+.volver {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--color-fondo);
+  border: var(--borde);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra-chica);
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  text-decoration: none;
+  transform: rotate(.9deg);
+  transition: transform .15s ease;
+}
+.volver:hover { transform: rotate(.9deg) translate(-2px, -2px); }
+
+
+/* =========================================================================
+   PÁGINA PRINCIPAL — BANNER
+   ========================================================================= */
+
+.banner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 70px 24px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.banner-personaje img {
+  width: 300px;
+  height: auto;
+  transform: rotate(-1deg);
+}
+
+.banner-logo { text-align: left; }
+.banner-logo img { width: 100%; max-width: 470px; height: auto; }
+.banner-logo .img-subtitulo { max-width: 300px; margin-top: 4px; margin-left: 6px; }
+
+
+/* =========================================================================
+   PÁGINA PRINCIPAL — BOTONES, CONTACTO Y REDES
+   ========================================================================= */
+
+.zona-acciones {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 10px 24px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.col-contacto { justify-self: end; }
+.col-redes    { justify-self: start; display: flex; flex-direction: column; gap: 14px; }
+.col-botones  { display: flex; flex-direction: column; gap: 18px; }
+
+/* ---- Los dos botones grandes ---- */
+.btn-grande {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  width: 340px;
+  padding: 16px 22px;
+  border: var(--borde-grueso);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra);
+  color: #fff;
+  font-family: var(--fuente-titulo);
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-grande img { width: 34px; height: 34px; }
+
+.btn-portfolio   { background: var(--color-gris); transform: rotate(-.6deg); }
+.btn-commissions { background: var(--color-rojo); transform: rotate(.5deg); }
+
+.btn-portfolio:hover   { background: var(--color-gris-claro); transform: rotate(-.6deg) translate(-3px, -3px); box-shadow: 8px 9px 0 rgba(21,21,21,.22); }
+.btn-commissions:hover { background: var(--color-rojo-claro); transform: rotate(.5deg) translate(-3px, -3px);  box-shadow: 8px 9px 0 rgba(21,21,21,.22); }
+
+/* ---- Contacto ---- */
+.btn-contacto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  background: var(--color-rojo);
+  color: #fff;
+  border: var(--borde-grueso);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra-chica);
+  font-family: var(--fuente-titulo);
+  font-size: 20px;
+  cursor: pointer;
+  transform: rotate(-1deg);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn-contacto:hover { background: var(--color-rojo-claro); transform: rotate(-1deg) translate(-2px, -2px); }
+.btn-contacto img { width: 26px; height: 26px; }
+
+.mail-visible {
+  margin: 8px 0 0 4px;
+  font-size: 13px;
+  color: var(--color-texto-suave);
+  transform: rotate(-.6deg);
+}
+
+/* ---- Íconos de redes ---- */
+.icono-red {
+  display: block;
+  width: 54px;
+  border: var(--borde);
+  border-radius: 0;
+  background: var(--color-fondo);
+  box-shadow: var(--sombra-chica);
+  padding: 4px;
+  transition: transform .15s ease;
+}
+.icono-red:nth-child(odd)  { transform: rotate(-1.4deg); }
+.icono-red:nth-child(even) { transform: rotate(1.4deg); }
+.icono-red:hover { transform: translate(-2px, -3px) rotate(0deg); }
+.icono-red img { width: 100%; height: auto; }
+
+
+/* =========================================================================
+   CARTELITOS DE MOUSE-OVER (tooltips)
+   ========================================================================= */
+
+.tooltip {
+  position: fixed;
+  z-index: 200;
+  display: none;
+  opacity: 0;
+  max-width: 260px;
+  padding: 8px 13px;
+  background: var(--color-fondo);
+  color: var(--color-negro);
+  border: var(--borde);
+  border-radius: 0;
+  box-shadow: var(--sombra-chica);
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  line-height: 1.35;
+  pointer-events: none;
+  transform: rotate(-.8deg);
+}
+
+
+/* =========================================================================
+   TÍTULOS DE SECCIÓN
+   ========================================================================= */
+
+.titulo-pagina {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 78px 24px 6px;
+  font-family: var(--fuente-titulo);
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transform: rotate(-.7deg);
+}
+
+.titulo-seccion {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 24px 12px;
+  font-family: var(--fuente-titulo);
+  font-size: 34px;
+  font-weight: 400;
+  transform: rotate(-.5deg);
+}
+
+.subrayado::after {
+  content: "";
+  display: block;
+  width: 190px;
+  max-width: 60%;
+  height: 5px;
+  margin-top: 4px;
+  background: var(--color-rojo);
+  border-radius: 4px;
+  transform: rotate(-.5deg);
+}
+
+
+/* =========================================================================
+   PORTFOLIO — DEMOREEL
+   ========================================================================= */
+
+.demoreel {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.demoreel-marco {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--color-gris);
+  border: var(--borde-grueso);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transform: rotate(-.35deg);
+}
+.demoreel-marco iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* =========================================================================
+   PORTFOLIO — GRILLA DE ANIMACIONES
+   ========================================================================= */
+
+.grilla {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 6px 24px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 26px;
+}
+
+.card { display: flex; flex-direction: column; }
+.card:nth-child(3n+1) { transform: rotate(-.5deg); }
+.card:nth-child(3n+2) { transform: rotate(.35deg); }
+.card:nth-child(3n)   { transform: rotate(-.2deg); }
+
+.card-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  background: var(--color-panel);
+  border: var(--borde);
+  border-radius: 0;
+  box-shadow: var(--sombra-chica);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card-thumb:hover { transform: translate(-3px, -3px); box-shadow: 8px 9px 0 rgba(21,21,21,.22); }
+
+/* botón de play dibujado con CSS */
+.card-thumb .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 62px;
+  height: 62px;
+  margin: -31px 0 0 -31px;
+  background: var(--color-rojo);
+  border: var(--borde);
+  border-radius: 50%;
+  box-shadow: 2px 3px 0 rgba(21,21,21,.3);
+}
+.card-thumb .play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  border-left: 20px solid #fff;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+}
+.card-thumb:hover .play { background: var(--color-rojo-claro); }
+
+.card-pie {
+  margin: 10px 2px 0;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.card-titulo { font-weight: 700; }
+.card-fecha  { color: var(--color-texto-suave); }
+
+.aviso-vacio {
+  grid-column: 1 / -1;
+  padding: 40px;
+  text-align: center;
+  color: var(--color-texto-suave);
+}
+
+
+/* =========================================================================
+   PORTFOLIO — REPRODUCTOR EN LA MISMA PÁGINA (modal)
+   ========================================================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal.abierto { display: flex; }
+
+.modal-fondo {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 12, 10, .82);
+}
+
+.modal-caja {
+  position: relative;
+  width: min(1000px, 100%);
+}
+
+.modal-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: var(--borde-grueso);
+  border-radius: 0;
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, .5);
+  overflow: hidden;
+}
+.modal-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.modal-titulo {
+  margin: 12px 2px 0;
+  color: var(--color-fondo);
+  font-family: var(--fuente-titulo);
+  font-size: 19px;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: -20px;
+  right: -14px;
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  background: var(--color-rojo);
+  color: #fff;
+  border: var(--borde);
+  border-radius: 50%;
+  box-shadow: var(--sombra-chica);
+  font-family: var(--fuente-titulo);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-cerrar:hover { background: var(--color-rojo-claro); }
+
+
+/* =========================================================================
+   COMMISSIONS — PANEL
+   ========================================================================= */
+
+.panel {
+  max-width: 1100px;
+  margin: 18px auto 0;
+  padding: 0 24px;
+}
+
+/* Marco gris oscuro de afuera (como en el boceto) */
+.panel-marco {
+  padding: 14px 14px 16px;
+  background: var(--color-gris);
+  border: var(--borde-grueso);
+  box-shadow: var(--sombra);
+}
+
+/* ---- Pestañas de arriba: Icon / Half body / Full body / Gif ---- */
+.pestanias {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.pestania {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-bottom: 12px;
+  padding: 8px 16px 10px;
+  background: var(--color-rojo-oscuro);
+  color: #fff;
+  border: var(--borde-grueso);
+  font-family: var(--fuente-titulo);
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.pestania:hover { background: var(--color-rojo-claro); }
+
+/* La pestaña elegida se "pega" al cuerpo rojo, como una carpeta */
+.pestania.activa {
+  margin-bottom: -4px;
+  padding-bottom: 30px;
+  background: var(--color-rojo);
+  border-bottom: none;
+}
+
+/* ---- Cuerpo rojo ---- */
+.panel-cuerpo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  background: var(--color-rojo);
+  border: var(--borde-grueso);
+}
+
+/* ---- Sub-pestañas de la izquierda: Sketch / Lineart / Color ---- */
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.subpestania {
+  padding: 9px 10px;
+  background: var(--color-gris);
+  color: #d9d4cb;
+  border: var(--borde-grueso);
+  font-family: var(--fuente-titulo);
+  font-size: 21px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.subpestania:hover  { background: var(--color-gris-claro); color: #fff; }
+.subpestania.activa {
+  background: #7a7a7a;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+
+/* ---- Recuadro gris del medio: imagen + datos ---- */
+.panel-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  padding: 18px;
+  background: var(--color-gris);
+  border: var(--borde-grueso);
+}
+
+.ejemplo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 10px;
+  background: #fff;
+  border: var(--borde-grueso);
+}
+.ejemplo img { max-height: 440px; width: auto; }
+
+/* ---- Columna derecha: Costo, aviso y Background ---- */
+.lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.caja {
+  padding: 8px 14px 10px;
+  background: #fff;
+  color: var(--color-negro);
+  border: var(--borde);
+}
+.caja h3 {
+  margin: 0;
+  font-family: var(--fuente-titulo);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Precio en dólares: grande */
+.precio-usd {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 2px 0 6px;
+}
+.precio-usd .monto {
+  font-family: var(--fuente-titulo);
+  font-size: 46px;
+  line-height: 1.05;
+}
+.precio-usd .moneda {
+  font-family: var(--fuente-titulo);
+  font-size: 22px;
+}
+.precio-usd img {
+  width: 26px;
+  height: 26px;
+  align-self: flex-end;
+  margin-bottom: 8px;
+}
+
+/* Precio en pesos: chico, entre dos rayitas */
+.precio-ars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+}
+.precio-ars .linea {
+  flex: 1 1 auto;
+  height: 2px;
+  background: var(--color-negro);
+}
+.precio-ars img { width: 22px; height: 22px; }
+
+/* Aviso de "es sólo un estimado", con el triángulo a la derecha */
+.caja-aviso {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 14px;
+  font-family: var(--fuente-titulo);
+  font-size: 13px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.caja-aviso .signo {
+  flex: 0 0 auto;
+  font-size: 30px;
+  line-height: 1;
+}
+
+/* Background: recuadro más chico, alineado a la izquierda */
+.caja-fondo {
+  align-self: flex-start;
+  min-width: 170px;
+}
+
+.opciones-fondo { display: flex; gap: 18px; align-items: center; }
+.opciones-fondo label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--fuente-titulo);
+  font-size: 17px;
+  cursor: pointer;
+}
+.opciones-fondo input {
+  width: 19px;
+  height: 19px;
+  accent-color: var(--color-rojo);
+  cursor: pointer;
+}
+
+
+/* =========================================================================
+   COMMISSIONS — CONDICIONES Y ACLARACIÓN FINAL
+   ========================================================================= */
+
+.condiciones {
+  max-width: 1100px;
+  margin: 34px auto 0;
+  padding: 0 24px;
+}
+.condiciones ul { margin: 6px 0 0; padding-left: 22px; }
+.condiciones li { margin-bottom: 8px; }
+
+.aclaracion {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 22px 26px;
+  background: var(--color-panel);
+  border: var(--borde-grueso);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra);
+  transform: rotate(-.3deg);
+}
+.aclaracion h2 {
+  margin: 0 0 8px;
+  font-family: var(--fuente-titulo);
+  font-size: 27px;
+  font-weight: 400;
+}
+.aclaracion ul { margin: 0; padding-left: 22px; }
+.aclaracion li { margin-bottom: 7px; }
+
+.btn-instagram {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 13px 26px;
+  background: var(--color-rojo);
+  color: #fff;
+  border: var(--borde-grueso);
+  border-radius: var(--redondeo);
+  box-shadow: var(--sombra-chica);
+  font-family: var(--fuente-titulo);
+  font-size: 21px;
+  text-decoration: none;
+  transform: rotate(.6deg);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn-instagram:hover { background: var(--color-rojo-claro); transform: rotate(.6deg) translate(-3px, -3px); }
+
+
+/* =========================================================================
+   PANTALLAS CHICAS
+   Todavía no es una adaptación mobile completa: solo evita que se rompa.
+   ========================================================================= */
+
+@media (max-width: 1080px) {
+  .grilla { grid-template-columns: repeat(2, 1fr); }
+  .panel-contenido { grid-template-columns: 1fr; }
+  .lateral { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+  .lateral .caja { flex: 1 1 240px; }
+}
+
+@media (max-width: 860px) {
+  .zona-acciones {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 26px;
+  }
+  .col-contacto, .col-redes { justify-self: center; }
+  .col-redes { flex-direction: row; }
+  .banner { padding-top: 84px; }
+  .banner-personaje img { width: 220px; }
+  .titulo-pagina { font-size: 36px; }
+}
+
+@media (max-width: 700px) {
+  .grilla { grid-template-columns: 1fr; }
+  .panel-cuerpo { grid-template-columns: 1fr; }
+  .opciones { flex-direction: row; flex-wrap: wrap; }
+  .subpestania { min-width: 0; flex: 1 1 auto; text-align: center; }
+  .btn-grande { width: 100%; max-width: 340px; font-size: 25px; }
+  .panel-marco { padding: 8px; }
+  .pestanias { gap: 6px; }
+  .pestania { font-size: 14px; line-height: 1.1; padding: 6px 8px 8px; white-space: normal; overflow: visible; }
+  .pestania.activa { padding-bottom: 28px; }
+  .panel-cuerpo, .panel-contenido { padding: 12px; gap: 12px; }
+  .modal-cerrar { top: -18px; right: -6px; width: 40px; height: 40px; }
+}

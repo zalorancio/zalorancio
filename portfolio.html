@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="titulo_pagina_portfolio">Portfolio — ZALORANCIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body data-pagina="portfolio">
+
+  <a class="volver" href="./index.html">&#8592; <span data-i18n="volver_inicio">Volver al inicio</span></a>
+
+  <button id="btn-idioma" class="btn-idioma" type="button"
+          data-i18n-tooltip="tooltip_idioma"></button>
+
+  <!-- ===================================================================
+       DEMOREEL
+       El video se elige en js/animaciones.js (arriba de todo, DEMOREEL).
+       =================================================================== -->
+  <h1 class="titulo-pagina subrayado" data-i18n="seccion_demoreel">Demoreel</h1>
+
+  <section class="demoreel">
+    <div id="demoreel" class="demoreel-marco"></div>
+  </section>
+
+  <!-- ===================================================================
+       ALL ANIMATIONS
+       La grilla se arma sola con la lista de js/animaciones.js.
+       Si agregás 40 videos, se muestran 40. No hay que tocar nada acá.
+       =================================================================== -->
+  <h2 class="titulo-seccion subrayado" data-i18n="seccion_animaciones">All Animations</h2>
+
+  <section id="grilla" class="grilla"></section>
+
+  <!-- ===================================================================
+       REPRODUCTOR QUE SE ABRE DENTRO DE LA MISMA PÁGINA
+       Se cierra con la X, haciendo click en el fondo oscuro o con Escape.
+       =================================================================== -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-fondo"></div>
+    <div class="modal-caja">
+      <button class="modal-cerrar" type="button"
+              data-i18n-label="tooltip_cerrar"
+              data-i18n-tooltip="tooltip_cerrar">&#10005;</button>
+      <div id="modal-video" class="modal-video"></div>
+      <p id="modal-titulo" class="modal-titulo"></p>
+    </div>
+  </div>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/textos.js"></script>
+  <script src="./js/animaciones.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+</html>
