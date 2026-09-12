@@ -56,15 +56,15 @@ const ANIMACIONES = [
     miniatura: "",                 // <- opcional, ver nota al final del archivo
   },
   {
-    titulo:    "Animacion2",
-    fecha:     "Junio 2026",
-    youtubeId: "jNQXAC9IVRw",
+    titulo:    "Acting ",
+    fecha:     "Marzo 2026",
+    youtubeId: "jKE2kb5ygMI",
     miniatura: "",
   },
   {
-    titulo:    "Animacion3",
-    fecha:     "Mayo 2026",
-    youtubeId: "dQw4w9WgXcQ",
+    titulo:    "Waving Practice Blue Lock fanart",
+    fecha:     "Febrero 2026",
+    youtubeId: "rqYOnWsPjTc",
     miniatura: "",
   },
   {
