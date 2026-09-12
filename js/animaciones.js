@@ -50,9 +50,9 @@ const ANIMACIONES = [
   // ===== AGREGAR NUEVAS ANIMACIONES ACÁ ARRIBA (aparecen primero) =====
 
   {
-    titulo:    "Animacion1",       // <- título que se muestra, entre comillas
-    fecha:     "Julio 2026",       // <- fecha que se muestra al lado
-    youtubeId: "aqz-KE-bpKQ",      // <- ID del video de YouTube
+    titulo:    "Bruja del super",       // <- título que se muestra, entre comillas
+    fecha:     "Agosto 2026",       // <- fecha que se muestra al lado
+    youtubeId: "sIbfPxIYP0A",      // <- ID del video de YouTube
     miniatura: "",                 // <- opcional, ver nota al final del archivo
   },
   {
